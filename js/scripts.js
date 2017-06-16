@@ -66,9 +66,9 @@ $(document).ready(function() {
     $(".totalPrice").empty();
     $(".totalPrice").append(newOrder.totalPrice());
     $("#order-confirm").append("<h4 class='pizza-title'>" + newPizza.size + " pizza:</h4>");
-    $("#order-confirm").append("<h5>Toppings:</h5><ul class='toppings list-inline'></ul>");
+    $("#order-confirm").append("<h5>Toppings</h5><ul class='toppings'</ul>");
     newPizza.toppings.forEach(function(item) {
-      $("#order-confirm").append("<li>" + item + "</li>");
+      $("#order-confirm").append("<li class='list-inline'>" + item + "</li>");
     });
     $("#order-confirm").append("<h5>Cost: $" + newPizzaPrice + ".00</h5>");
     $("#order-confirm").show();
