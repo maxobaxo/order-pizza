@@ -55,6 +55,7 @@ console.log(newOrder.price());
     newOrder.toppings.forEach(function(item) {
       $(".toppings").append("<li>" + item + "</li>");
     });
+    $(".grandTotal").text(newOrder.price());
     $("#order-confirm").show();
   });
 });
