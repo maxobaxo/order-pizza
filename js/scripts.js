@@ -3,18 +3,13 @@ function Cart() {
   this.items = [];
 };
 
-Cart.prototype.addToCart = function(newPizza) {
-  this.items.push(newPizza);
-  return this.items;
+Cart.prototype.totalPrice = function() {
   this.grandTotal = 0;
+  for (var i = 0; i < this.items.length; i++) {
+    this.grandTotal += this.items[i].pizzaTotal;
+  }
+  return this.grandTotal;
 };
-
-// Cart.prototype.totalPrice = function() {
-//   this.items.forEach(function(item) {
-//     this.grandTotal += item.pizzaTotal();
-//   });
-//   return this.grandTotal;
-// };
 
 function Pizza(size, toppings) {
   this.size = size;
@@ -65,16 +60,21 @@ $(document).ready(function() {
       toppingsInput.push(toppingSelection);
     });
     var newPizza = new Pizza(sizeInput, toppingsInput);
-    var addItem = newOrder.addToCart(newPizza);
-// console.log(newPizza);
-// console.log(newPizza.toppings);
-// console.log(newPizza.price());
-    $(".size").text(newPizza.size)
-    newPizza.toppings.forEach(function(item) {
-      $(".toppings").append("<li>" + item + "</li>");
-    });
-    $(".grandTotal").text(newPizza.price());
+    var newPizzaprice = newPizza.price();
+    newOrder.items.push(newPizza);
+    // var updatedTotal = newOrder.totalPrice();
+
+    $("order-confirm h3").empty();
+    for (var i = 1; i <= newOrder.items.length; i++) {
+      $("#order-confirm h3").append("<h4 class='pizza-title'>Pizza #" + i + ":</h4>");
+      // $("#order-confirm h3").append(newOrder.addToCart());
+    }
+    // $(".size").text(newPizza.size)
+    // newPizza.toppings.forEach(function(item) {
+    //   $(".toppings").append("<li>" + item + "</li>");
+    // });
+    // $(".pizzaTotal").text(newPizza.price());
     $("#order-confirm").show();
-    console.log(addItem);
+    console.log(newOrder.totalPrice());
   });
 });
