@@ -23,6 +23,14 @@ This website is for a pizza company, where a user can choose one or more individ
 3. It can return an order confirmation including customer selections along with price
   * Input: Large Cheese w/ Pepperoni
   * Output: You have ordered a Large Cheese Pizza w/ Pepperoni. Your total is $8.00
+4. It can accomplish the previous specifications for multiple pizzas, keeping track of multiple pizzas in one order.
+  * Input 1: Large Cheese w/ Pepperoni
+  * Input 2: Small (no cheese) w/ Olives and Anchovy
+  * Output: [[size: large, toppings: [cheese, pepperoni], price: $8.00], [size: small, toppings: [olives, anchovy], price: $12.00]]
+5. It can calculate the total price of the order based on multiple pizzas in one order.
+  * Input 1: Large Cheese w/ Pepperoni
+  * Input 2: Small (no cheese) w/ Olives and Anchovy
+  * Output: "That'll be 20 bucks!"
 
 ## Languages Used ##
 Git, HTML, CSS, JavaScript

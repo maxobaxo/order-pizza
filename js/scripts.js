@@ -24,7 +24,7 @@ Pizza.prototype.price = function() {
     this.pizzaTotal += 10;
   } else {
     this.pizzaTotal += 12;
-  }
+  };
 
   this.toppings.forEach(function(item) {
     if (item === "cheese") {
@@ -52,8 +52,6 @@ $(document).ready(function() {
 
   $("#order-form").submit(function(event) {
     event.preventDefault();
-
-    // $("#order-confirm").empty();
 
     var sizeInput = $("#size").val();
     var toppingsInput = [];
