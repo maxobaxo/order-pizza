@@ -53,6 +53,8 @@ $(document).ready(function() {
   $("#order-form").submit(function(event) {
     event.preventDefault();
 
+    // $("#order-confirm").empty();
+
     var sizeInput = $("#size").val();
     var toppingsInput = [];
     $("input:checkbox[name=toppings]:checked").each(function() {
@@ -60,21 +62,24 @@ $(document).ready(function() {
       toppingsInput.push(toppingSelection);
     });
     var newPizza = new Pizza(sizeInput, toppingsInput);
-    var newPizzaprice = newPizza.price();
+    var newPizzaPrice = newPizza.price();
     newOrder.items.push(newPizza);
-    // var updatedTotal = newOrder.totalPrice();
 
-    $("order-confirm h3").empty();
-    for (var i = 1; i <= newOrder.items.length; i++) {
-      $("#order-confirm h3").append("<h4 class='pizza-title'>Pizza #" + i + ":</h4>");
-      // $("#order-confirm h3").append(newOrder.addToCart());
-    }
-    // $(".size").text(newPizza.size)
-    // newPizza.toppings.forEach(function(item) {
-    //   $(".toppings").append("<li>" + item + "</li>");
-    // });
-    // $(".pizzaTotal").text(newPizza.price());
+    $(".totalPrice").empty();
+    $(".totalPrice").append(newOrder.totalPrice());
+    $("#order-confirm").append("<h4 class='pizza-title'>" + newPizza.size + " pizza:</h4>");
+    $("#order-confirm").append("<h5>Toppings:</h5><ul class='toppings list-inline'></ul>");
+    newPizza.toppings.forEach(function(item) {
+      $("#order-confirm").append("<li>" + item + "</li>");
+    });
+    $("#order-confirm").append("<h5>Cost: $" + newPizzaPrice + ".00</h5>");
     $("#order-confirm").show();
-    console.log(newOrder.totalPrice());
+  });
+
+  $("#final-submit").click(function(event) {
+    event.preventDefault();
+    $(".totalPrice").empty();
+    $(".totalPrice").append(newOrder.totalPrice());
+    $("#time-to-leave").show();
   });
 });

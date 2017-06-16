@@ -1,7 +1,8 @@
 #order-confirm {
   display: none;
-  border: 2px double #A02E20;
   padding-top: 0;
+  text-align: center;
+  font-style: normal;
 }
 
 .form-control {
@@ -41,6 +42,7 @@ body {
 .well {
   margin: 2%;
   background-color: #FCEDC2;
+  border: 2px double #A02E20;
 }
 
 #order-form {
@@ -75,4 +77,13 @@ body {
 
 .pizza-title {
   text-decoration: underline;
+}
+
+#complete-order {
+  display: none, block;
+  margin: auto;
+}
+
+#time-to-leave {
+  display: none;
 }

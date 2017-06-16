@@ -27,6 +27,15 @@
       </div>
 
       <div class="row">
+        <div class="col-md-12">
+          <div class="well" id="time-to-leave">
+            <h2>You'll get your stupid pizza, pal...</h2>
+            <h4>but it'll cost you $<span class="totalPrice"></span> big ones!</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-md-6">
           <form class ="well" id="order-form">
             <h3>Order online by making your selections below!</h3>
@@ -52,18 +61,14 @@
         </div>
         <div class="col-md-6">
           <div class="well" id="order-confirm">
-            <h3>Order Summary:</h3>
-            <!-- <h5 class="pizza-title">Pizza #1</h5>
-            <p>Size: <span class="size"></span></p>
-            Toppings:
-            <ul class="toppings">
-
-            </ul>
-            <p>Price $<span class="pizzaTotal"></span>.00</p> -->
+            <form id="final-submit">
+              <h3>Order Summary:</h3>
+              <footer><h4>Total Cost for Order: $<span class="totalPrice"></span>.00</h4></footer>
+              <button type="click" class="red-button btn" id="complete-order">Complete Order</button>
+            </form>
           </div>
         </div>
       </div>
-
 
     </div>
   </body>
