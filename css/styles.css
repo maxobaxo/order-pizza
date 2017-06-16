@@ -49,10 +49,15 @@ body {
   padding-top: 0;
 }
 
+#delivery button {
+  margin-top: 2%;
+}
+
 .red-button {
   background-color: #A02E20;
   color: #FCEDC2;
-  text-decoration-style: solid;
+  display: block;
+  margin: auto;
 }
 
 #rizzo-pic {
@@ -65,6 +70,16 @@ body {
 #rizzo-pic-col {
   display: block;
   margin: auto;
+}
+
+.on-our-way {
+  display: none;
+}
+
+.center {
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 
 #size {

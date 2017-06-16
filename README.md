@@ -31,6 +31,9 @@ This website is for a pizza company, where a user can choose one or more individ
   * Input 1: Large Cheese w/ Pepperoni
   * Input 2: Small (no cheese) w/ Olives and Anchovy
   * Output: "That'll be 20 bucks!"
+6. It can receive an address for delivery based on user input and confirm said address on submission.
+  * Input: 123 Sesame Street, Portland, 97258
+  * Output: "We'll deliver to 123 Sesame Street, Portland, 97258"
 
 ## Languages Used ##
 Git, HTML, CSS, JavaScript

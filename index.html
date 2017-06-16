@@ -26,19 +26,39 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="well" id="time-to-leave">
-            <h2>You'll get your stupid pizza, pal...</h2>
-            <h4>but it'll cost you $<span class="totalPrice"></span> big ones!</h4>
+      <div class="well" id="time-to-leave">
+        <h2>You'll get your stupid pizza, pal...
+        but it'll cost you $<span class="totalPrice"></span> big ones!</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Tell us where to rush this off to!</h3>
+            <form id="delivery">
+              <div class="form-group center">
+                <input id="name" type="text" name="contact-info" placeholder="Full Name" value="name">
+                <input id="phone" type="text" name="contact-info" placeholder="Phone Number" value="phone">
+                <input id="street" type="text" name="contact-info" placeholder="Street Address" value="street">
+                <input id="city" type="text" name="contact-info" placeholder="City" value="city">
+                <input id="zip" type="text" name="contact-info" placeholder="Zip Code" value="zip">
+              </div>
+              <button type="submit" class="red-button btn">Get Me My Pie</button>
+            </form>
+
           </div>
         </div>
+      </div>
+
+      <div class="on-our-way well">
+        <h3>We're on our way to you now <span class="name"></span>!</h3>
+        <p>We'll be at the following address ASAP:</p>
+        <span class="street"></span>
+        <span class="city"></span>
+        <span class="zip"></span>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <form class ="well" id="order-form">
-            <h3>Order online by making your selections below!</h3>
+            <h3>Make your selections below!</h3>
             <div class="form-group">
               <p>What size of pizza would you like?</p>
               <select class="form-control" id="size">
