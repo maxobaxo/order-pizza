@@ -5,3 +5,12 @@
 .form-control {
   width: 50%;
 }
+
+body {
+  background-image: url("../img/bg-pizza-tile.png");
+}
+
+.jumbotron {
+  background-color: #A02E20;
+  color: #FCEDC2;
+}
