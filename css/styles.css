@@ -1,5 +1,7 @@
 #order-confirm {
   display: none;
+  border: 2px double #A02E20;
+  padding-top: 0;
 }
 
 .form-control {
@@ -13,4 +15,64 @@ body {
 .jumbotron {
   background-color: #A02E20;
   color: #FCEDC2;
+}
+
+.jumbotron p {
+  text-align: justify;
+}
+
+.jumbotron h1 {
+  margin-bottom: 0;
+}
+
+.jumbotron h2 {
+  margin-top: 0%;
+}
+
+.jumbotron .well {
+  color: #A02E20;
+  margin: auto;
+}
+
+#endorsements {
+  vertical-align: bottom;
+}
+
+.well {
+  margin: 2%;
+  background-color: #FCEDC2;
+}
+
+#order-form {
+  padding-top: 0;
+}
+
+.red-button {
+  background-color: #A02E20;
+  color: #FCEDC2;
+  text-decoration-style: solid;
+}
+
+#rizzo-pic {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+#rizzo-pic-col {
+  display: block;
+  margin: auto;
+}
+
+#size {
+  margin-bottom: 2%
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.pizza-title {
+  text-decoration: underline;
 }
