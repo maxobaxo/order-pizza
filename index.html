@@ -10,40 +10,60 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Rizzo's</h1>
-        <h2>Personalized Pizza Pies</h2>
-      </div>
-
-      <h3>Order online by making your selections below!</h3>
-      <form id="order-form">
-        <div class="form-group">
-          <p>What size of pizza would you like?</p>
-          <select class="form-control" id="size">
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-
-          <p>Choose your toppings from the list below.</p>
-          <ul class="list-inline">
-            <li><input type="checkbox" name="toppings" value="cheese">Cheese</li>
-            <li><input type="checkbox" name="toppings" value="pepperoni">Pepperoni</li>
-            <li><input type="checkbox" name="toppings" value="olives">Olives</li>
-            <li><input type="checkbox" name="toppings" value="sausage">Sausage</li>
-            <li><input type="checkbox" name="toppings" value="anchovy">Anchovy</li>
-          </ul>
+        <div class="row">
+          <div class="col-md-6" id="endorsements">
+            <h1>Rizzo's</h1>
+            <h2>Personalized Pizza Pies</h2>
+              <div class="well">
+                <p>Ranked #1 Best Pizza in America <br>by <em>New Rat Times<em></p>
+                <p><span class="italic-text">"Best food-coma I ever had."</span> - Gonzo</p>
+                <p><span class="italic-text">"Better than a dumpster fire"</span> - Fozzy Bear</p>
+              </div>
+          </div>
+          <div class="col-md-6" id="rizzo-pic-col">
+            <img class= "img-rounded" id="rizzo-pic" src="img/rizzo.jpg" alt="profile picture of Rizzo" />
+          </div>
         </div>
-
-        <button type="submit">Review Your Order</button>
-      </form>
-
-      <div id="order-confirm">
-        <p>You have ordered a <span class="size"></span> pizza pie with the following toppings:</p>
-        <ul class="toppings">
-
-        </ul>
-        <p>Your total comes to $<span class="grandTotal"></span></p>
       </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form class ="well" id="order-form">
+            <h3>Order online by making your selections below!</h3>
+            <div class="form-group">
+              <p>What size of pizza would you like?</p>
+              <select class="form-control" id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+
+              <p>Choose your toppings from the list below.</p>
+              <ul class="list-inline">
+                <li><input type="checkbox" name="toppings" value="cheese">  Cheese</li>
+                <li><input type="checkbox" name="toppings" value="pepperoni">  Pepperoni</li>
+                <li><input type="checkbox" name="toppings" value="olives">  Olives</li>
+                <li><input type="checkbox" name="toppings" value="sausage">  Sausage</li>
+                <li><input type="checkbox" name="toppings" value="anchovy">  Anchovy</li>
+              </ul>
+            </div>
+            <button type="submit" class="red-button btn">Add to Order</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="well" id="order-confirm">
+            <h3>Order Summary:</h3>
+            <h5 class="pizza-title">Pizza #1</h5>
+            <p>Size: <span class="size"></span></p>
+            Toppings:
+            <ul class="toppings">
+
+            </ul>
+            <p>Price $<span class="grandTotal"></span>.00</p>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </body>

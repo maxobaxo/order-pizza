@@ -1,42 +1,60 @@
 //business logic
-function Order(size, toppings) {
-  this.size = size;
-  this.toppings = toppings;
+function Cart() {
+  this.items = [];
 };
 
-Order.prototype.price = function() {
-  var pizzaTotal = 0;
+Cart.prototype.addToCart = function(newPizza) {
+  this.items.push(newPizza);
+  return this.items;
+  this.grandTotal = 0;
+};
 
+// Cart.prototype.totalPrice = function() {
+//   this.items.forEach(function(item) {
+//     this.grandTotal += item.pizzaTotal();
+//   });
+//   return this.grandTotal;
+// };
+
+function Pizza(size, toppings) {
+  this.size = size;
+  this.toppings = toppings;
+  this.pizzaTotal = 0;
+};
+
+Pizza.prototype.price = function() {
   if (this.size === "small") {
-    pizzaTotal += 8;
+    this.pizzaTotal += 8;
   } else if (this.size === "medium") {
-    pizzaTotal += 10;
+    this.pizzaTotal += 10;
   } else {
-    pizzaTotal += 12;
+    this.pizzaTotal += 12;
   }
 
   this.toppings.forEach(function(item) {
     if (item === "cheese") {
-      pizzaTotal += 1;
+      this.pizzaTotal += 1;
     }
     if (item === "pepperoni") {
-      pizzaTotal += 2;
+      this.pizzaTotal += 2;
     }
     if (item === "olives") {
-      pizzaTotal += 1;
+      this.pizzaTotal += 1;
     }
     if (item === "sausage") {
-      pizzaTotal += 3;
+      this.pizzaTotal += 3;
     }
     if (item === "anchovy") {
-      pizzaTotal += 2;
+      this.pizzaTotal += 2;
     }
   });
-  return pizzaTotal;
+  return this.pizzaTotal;
 };
 
 //user interface logic
 $(document).ready(function() {
+  var newOrder = new Cart();
+
   $("#order-form").submit(function(event) {
     event.preventDefault();
 
@@ -46,16 +64,17 @@ $(document).ready(function() {
       var toppingSelection = $(this).val();
       toppingsInput.push(toppingSelection);
     });
-    var newOrder = new Order(sizeInput, toppingsInput);
-console.log(newOrder);
-console.log(newOrder.toppings);
-console.log(newOrder.price());
-
-    $(".size").text(newOrder.size)
-    newOrder.toppings.forEach(function(item) {
+    var newPizza = new Pizza(sizeInput, toppingsInput);
+    var addItem = newOrder.addToCart(newPizza);
+// console.log(newPizza);
+// console.log(newPizza.toppings);
+// console.log(newPizza.price());
+    $(".size").text(newPizza.size)
+    newPizza.toppings.forEach(function(item) {
       $(".toppings").append("<li>" + item + "</li>");
     });
-    $(".grandTotal").text(newOrder.price());
+    $(".grandTotal").text(newPizza.price());
     $("#order-confirm").show();
+    console.log(addItem);
   });
 });
