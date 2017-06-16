@@ -17,9 +17,9 @@
       <form id="order-form">
         What size of pizza would you like?
         <select class="form-control" id="size">
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
         </select>
 
         Choose your toppings from the list below.
@@ -31,6 +31,13 @@
 
         <button type="submit">Get Price</button>
       </form>
+
+      <div id="order-confirm">
+        You have ordered a <span class="size"></span> pizza pie with the following toppings:
+        <ul class="toppings">
+
+        </ul>
+      </div>
 
     </div>
   </body>
